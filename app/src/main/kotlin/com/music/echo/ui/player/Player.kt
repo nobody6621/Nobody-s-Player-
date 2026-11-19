@@ -1784,6 +1784,14 @@ fun BottomSheetPlayer(
                 onSwipeLeft = { playerConnection.seekToNext() },
               )
         ) {
+          Text(
+            text = "NOW PLAYING",
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.6.sp,
+            color = Color(0xFF8DECF4),
+            modifier = Modifier.padding(bottom = 5.dp)
+          )
           AnimatedContent(
             targetState = mediaMetadata.title,
             transitionSpec = { fadeIn() togetherWith fadeOut() },
