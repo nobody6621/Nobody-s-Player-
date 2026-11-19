@@ -92,10 +92,46 @@ fun echomusicTheme(
 
   val colorScheme =
     remember(baseColorScheme, pureBlack, darkTheme, isMonochrome) {
-      if (darkTheme && pureBlack) {
-        baseColorScheme.pureBlack(true)
+      val themedScheme =
+        if (darkTheme && pureBlack) {
+          baseColorScheme.pureBlack(true)
+        } else {
+          baseColorScheme
+        }
+
+      // Nobody's Player dark surfaces use a restrained midnight-violet base.
+      // Bright violet and cyan accents provide the neon identity without
+      // sacrificing contrast or changing the user's selected light theme.
+      if (darkTheme && !isMonochrome) {
+        themedScheme.copy(
+          primary = Color(0xFFCB75FF),
+          onPrimary = Color(0xFF26003D),
+          primaryContainer = Color(0xFF42105F),
+          onPrimaryContainer = Color(0xFFF4D9FF),
+          secondary = Color(0xFF63E7F2),
+          onSecondary = Color(0xFF00363B),
+          secondaryContainer = Color(0xFF064B52),
+          onSecondaryContainer = Color(0xFFBDF8FC),
+          tertiary = Color(0xFFFF79C6),
+          onTertiary = Color(0xFF4A0030),
+          background = Color(0xFF080611),
+          onBackground = Color(0xFFF5EFFA),
+          surface = Color(0xFF0D0918),
+          onSurface = Color(0xFFF5EFFA),
+          surfaceVariant = Color(0xFF21172E),
+          onSurfaceVariant = Color(0xFFD0C2DC),
+          outline = Color(0xFF8D789F),
+          outlineVariant = Color(0xFF493957),
+          surfaceContainerLowest = Color(0xFF06040D),
+          surfaceContainerLow = Color(0xFF100B1C),
+          surfaceContainer = Color(0xFF171022),
+          surfaceContainerHigh = Color(0xFF21172E),
+          surfaceContainerHighest = Color(0xFF2B2039),
+          surfaceBright = Color(0xFF392B49),
+          surfaceDim = Color(0xFF080611)
+        )
       } else {
-        baseColorScheme
+        themedScheme
       }
     }
 
