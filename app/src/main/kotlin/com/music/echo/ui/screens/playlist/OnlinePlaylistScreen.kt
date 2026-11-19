@@ -9,6 +9,7 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -692,7 +693,12 @@ private fun OnlinePlaylistHeader(
                 if (LocalConfiguration.current.screenWidthDp > 600) Modifier.size(300.dp)
                 else Modifier.fillMaxWidth().aspectRatio(1f)
               )
-              .clip(RoundedCornerShape(8.dp)),
+              .clip(RoundedCornerShape(20.dp))
+              .border(
+                width = 1.dp,
+                color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.55f),
+                shape = RoundedCornerShape(20.dp)
+              ),
           contentScale = ContentScale.Crop
         )
       }
