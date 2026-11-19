@@ -10,6 +10,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
@@ -636,16 +637,19 @@ private fun ThumbnailItem(
         },
     contentAlignment = Alignment.Center,
   ) {
+    val artworkShape =
+      if (rotatingThumbnail) MaterialShapes.Clover8Leaf.toShape()
+      else RoundedCornerShape(dimensions.cornerRadius)
+
     Box(
       modifier =
         Modifier.size(dimensions.thumbnailSize)
           .graphicsLayer { rotationZ = rotation }
-          .clip(
-            if (rotatingThumbnail) {
-              MaterialShapes.Clover8Leaf.toShape()
-            } else {
-              RoundedCornerShape(dimensions.cornerRadius)
-            }
+          .clip(artworkShape)
+          .border(
+            width = 1.5.dp,
+            color = Color(0xFF8DECF4).copy(alpha = 0.72f),
+            shape = artworkShape,
           )
           .graphicsLayer { rotationZ = -rotation }
     ) {

@@ -1190,7 +1190,9 @@ fun Queue(
                     isActive = isActive,
                     isPlaying = isPlaying && isActive,
                     shape = listItemShape(index, mutableQueueWindows.size),
-                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    color =
+                      if (isActive) Color(0xFF8DECF4).copy(alpha = 0.12f)
+                      else MaterialTheme.colorScheme.surfaceVariant,
                     verticalPadding = 0.dp,
                     trailingContent = {
                       if (inSelectMode) {
