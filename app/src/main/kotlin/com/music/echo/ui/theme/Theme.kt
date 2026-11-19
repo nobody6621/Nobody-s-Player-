@@ -27,7 +27,8 @@ import echo.music.iad1tya.constants.AppFont
 import echo.music.iad1tya.constants.SelectedFontKey
 import echo.music.iad1tya.utils.rememberPreference
 
-val DefaultThemeColor = Color(0xFFED5564)
+// Nobody's Player brand seed: electric violet with a deep-night interface.
+val DefaultThemeColor = Color(0xFFB65CFF)
 
 @Composable
 fun echomusicTheme(
@@ -64,8 +65,9 @@ fun echomusicTheme(
       }
     }
 
-  val useSystemDynamicColor =
-    !isMonochrome && (themeColor == DefaultThemeColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+  // Keep the product identity consistent across Android devices instead of
+  // replacing the brand palette with device wallpaper colors.
+  val useSystemDynamicColor = false
 
   val baseColorScheme =
     if (isMonochrome) {
