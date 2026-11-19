@@ -2416,8 +2416,8 @@ fun BottomSheetPlayer(
                 colors =
                   PlayerSliderColors.getSliderColors(
                     activeColor =
-                      if (useNewPlayerDesign) textButtonColor
-                      else textButtonColor.copy(alpha = 0.7f),
+                      if (useNewPlayerDesign) Color(0xFF8DECF4)
+                      else Color(0xFF8DECF4).copy(alpha = 0.7f),
                     playerBackground = playerBackground,
                     useDarkTheme = useDarkTheme,
                   ),
