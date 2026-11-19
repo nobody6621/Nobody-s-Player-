@@ -262,8 +262,16 @@ fun AppNavigationBar(
   glassEnabled: Boolean = false,
   onSearchLongClick: (() -> Unit)? = null
 ) {
-  val containerColor = if (pureBlack) Color.Black else MaterialTheme.colorScheme.surfaceContainer
-  val contentColor = if (pureBlack) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
+  val containerColor = if (pureBlack) Color.Black else Color(0xFF100D1B)
+  val contentColor = if (pureBlack) Color.White else Color(0xFFB8AEC9)
+  val navigationColors =
+    androidx.compose.material3.NavigationBarItemDefaults.colors(
+      selectedIconColor = Color(0xFF8DECF4),
+      selectedTextColor = Color(0xFF8DECF4),
+      indicatorColor = Color(0xFF6E35A5).copy(alpha = 0.38f),
+      unselectedIconColor = contentColor,
+      unselectedTextColor = contentColor,
+    )
   val haptics = LocalHapticFeedback.current
   val viewConfiguration = LocalViewConfiguration.current
   val navModifier = modifier
@@ -313,6 +321,7 @@ fun AppNavigationBar(
 
       NavigationBarItem(
         selected = isSelected,
+        colors = navigationColors,
         onClick = {
           if (!isSearchItem) {
             onItemClick(screen, isSelected)
