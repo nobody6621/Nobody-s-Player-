@@ -2975,8 +2975,8 @@ fun BottomSheetPlayer(
                 interactionSource = playPauseInteractionSource,
                 colors =
                   IconButtonDefaults.filledIconButtonColors(
-                    containerColor = textButtonColor,
-                    contentColor = iconButtonColor,
+                    containerColor = Color(0xFF8DECF4),
+                    contentColor = Color(0xFF160D25),
                   ),
                 modifier =
                   Modifier.size(mainButtonSize).graphicsLayer {
