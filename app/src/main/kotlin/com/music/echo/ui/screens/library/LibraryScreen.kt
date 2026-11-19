@@ -177,6 +177,29 @@ fun LibraryScreen(navController: NavController) {
   val overviewHeaderContent =
     @Composable {
       Column(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background)) {
+        Column(
+          modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 14.dp),
+          verticalArrangement = Arrangement.spacedBy(3.dp),
+        ) {
+          Text(
+            text = "YOUR COLLECTION",
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.8.sp,
+            color = MaterialTheme.colorScheme.primary,
+          )
+          Text(
+            text = "Your library",
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.onBackground,
+          )
+          Text(
+            text = "Everything you saved, all in one place.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+          )
+        }
         filterContent()
 
         LibrarySourceTabs(
