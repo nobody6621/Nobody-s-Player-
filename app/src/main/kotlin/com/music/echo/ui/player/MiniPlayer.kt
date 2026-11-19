@@ -471,7 +471,7 @@ private fun NewMiniPlayer(progressState: ProgressState, modifier: Modifier = Mod
               } else {
                 m.clip(shape).background(bgTint)
               }
-              .border(1.dp, outlineColor.copy(alpha = 0.3f), shape)
+              .border(1.dp, primaryColor.copy(alpha = if (useDarkTheme) 0.48f else 0.3f), shape)
           }
     ) {
       MiniPlayerBackgroundLayer(
