@@ -961,6 +961,71 @@ fun HomeScreen(
         modifier = Modifier.hapticScrollEdge(lazylistState),
         contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues()
       ) {
+        if (selectedChip == null && !isPodcastPage) {
+          item(key = "nobodys_player_welcome") {
+            Box(
+              modifier =
+                Modifier.fillMaxWidth()
+                  .padding(horizontal = 16.dp, vertical = 10.dp)
+                  .clip(RoundedCornerShape(28.dp))
+                  .background(
+                    Brush.linearGradient(
+                      colors =
+                        listOf(
+                          Color(0xFF281044),
+                          Color(0xFF17102F),
+                          Color(0xFF092B38)
+                        )
+                    )
+                  )
+                  .padding(horizontal = 22.dp, vertical = 22.dp)
+            ) {
+              Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(
+                  text = "NOBODY'S PLAYER",
+                  style = MaterialTheme.typography.labelMedium,
+                  color = Color(0xFF8DECF4),
+                  fontWeight = FontWeight.Bold
+                )
+                Text(
+                  text = "Your sound.\nYour universe.",
+                  style = MaterialTheme.typography.headlineMedium,
+                  color = Color.White,
+                  fontWeight = FontWeight.Bold,
+                  lineHeight = MaterialTheme.typography.headlineMedium.lineHeight
+                )
+                Text(
+                  text = "Discover something worth replaying.",
+                  style = MaterialTheme.typography.bodyMedium,
+                  color = Color.White.copy(alpha = 0.76f)
+                )
+                Spacer(modifier = Modifier.height(2.dp))
+                Row(
+                  modifier =
+                    Modifier.clip(RoundedCornerShape(50))
+                      .background(Color.White.copy(alpha = 0.10f))
+                      .padding(horizontal = 12.dp, vertical = 7.dp),
+                  verticalAlignment = Alignment.CenterVertically
+                ) {
+                  Box(
+                    modifier =
+                      Modifier.size(7.dp)
+                        .clip(CircleShape)
+                        .background(Color(0xFF63E7F2))
+                  )
+                  Spacer(modifier = Modifier.width(8.dp))
+                  Text(
+                    text = "TUNE IN  •  ZONE OUT",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = Color.White.copy(alpha = 0.92f),
+                    fontWeight = FontWeight.SemiBold
+                  )
+                }
+              }
+            }
+          }
+        }
+
         item {
           ChipsRow(
             chips =
