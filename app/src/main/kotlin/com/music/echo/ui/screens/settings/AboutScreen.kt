@@ -335,10 +335,17 @@ private fun AboutAppCard() {
     Spacer(Modifier.height(4.dp))
 
     Text(
-      text = if (rotation <= 90f) "Echo Music" else "Developed by Aditya",
+      text = if (rotation <= 90f) "Nobody\u0027s Player" else "Developed by Aditya",
       style = MaterialTheme.typography.titleLarge,
       fontWeight = FontWeight.Bold,
       color = MaterialTheme.colorScheme.onSurface,
+    )
+    Text(
+      text = "YOUR SOUND. YOUR UNIVERSE.",
+      style = MaterialTheme.typography.labelSmall,
+      fontWeight = FontWeight.SemiBold,
+      color = MaterialTheme.colorScheme.secondary,
+      letterSpacing = 1.4.sp,
     )
     Row(
       horizontalArrangement = Arrangement.spacedBy(6.dp),
