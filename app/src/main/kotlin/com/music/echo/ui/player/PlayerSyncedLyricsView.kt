@@ -152,8 +152,8 @@ fun PlayerSyncedLyricsView(
       ) { lineText ->
         Text(
           text = lineText,
-          color = Color.White,
-          fontSize = 18.sp,
+          color = Color(0xFF8DECF4),
+          fontSize = 19.sp,
           fontWeight = FontWeight.Bold,
           textAlign = TextAlign.Left,
           modifier = Modifier.fillMaxWidth()

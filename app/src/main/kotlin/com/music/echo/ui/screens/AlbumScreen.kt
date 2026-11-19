@@ -304,6 +304,13 @@ fun AlbumScreen(
                   verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                   Text(
+                    text = "ALBUM",
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.8.sp,
+                    color = Color(0xFF8DECF4),
+                  )
+                  Text(
                     text = albumWithSongs.album.title,
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
@@ -380,6 +387,13 @@ fun AlbumScreen(
                     horizontalArrangement = Arrangement.Center,
                     modifier = Modifier
                   ) {
+                    Text(
+                      text = "ALBUM",
+                      style = MaterialTheme.typography.labelSmall,
+                      fontWeight = FontWeight.Bold,
+                      letterSpacing = 1.8.sp,
+                      color = Color(0xFF8DECF4),
+                    )
                     Text(
                       text = albumWithSongs.album.title,
                       style = MaterialTheme.typography.headlineMedium,
