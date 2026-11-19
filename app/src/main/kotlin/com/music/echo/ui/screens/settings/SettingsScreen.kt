@@ -96,12 +96,26 @@ fun SettingsScreen(
     Spacer(
       Modifier.windowInsetsPadding(LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Top))
     )
-    Text(
-      text = stringResource(R.string.settings),
-      style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.SemiBold),
-      color = MaterialTheme.colorScheme.onBackground,
+    Column(
       modifier = Modifier.padding(start = 8.dp, top = 24.dp, bottom = 16.dp)
-    )
+    ) {
+      Text(
+        text = "MAKE IT YOURS",
+        style = MaterialTheme.typography.labelSmall,
+        fontWeight = FontWeight.Bold,
+        color = MaterialTheme.colorScheme.primary,
+      )
+      Text(
+        text = stringResource(R.string.settings),
+        style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.SemiBold),
+        color = MaterialTheme.colorScheme.onBackground,
+      )
+      Text(
+        text = "Fine-tune your listening experience.",
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+      )
+    }
 
     TextField(
       value = searchQuery,
