@@ -2,4 +2,20 @@
 <resources>
     <!-- Widget Theme for Android 12+ with Dynamic Colors -->
     <style name="Theme.Widget.echomusic" parent="@android:style/Theme.DeviceDefault.DayNight" />
+    <!-- Nobody's Player Android 12+ launch splash -->
+    <style name="Theme.echomusic" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">#080716</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground">#080716</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">#17102B</item>
+        <item name="android:postSplashScreenTheme">@style/Theme.echomusic</item>
+    </style>
 </resources>
