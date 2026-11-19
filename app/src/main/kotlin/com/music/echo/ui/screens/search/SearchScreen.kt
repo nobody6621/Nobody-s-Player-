@@ -404,8 +404,26 @@ fun SearchScreen(
             .background(if (pureBlack) Color.Black else MaterialTheme.colorScheme.background)
             .windowInsetsPadding(WindowInsets.statusBars)
       ) {
-        // Top Header: Title "Search"
+        // Top Header: branded search identity
         if (!searchActive) {
+          Column(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(top = 14.dp, bottom = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(2.dp),
+          ) {
+            Text(
+              text = "DISCOVER YOUR NEXT OBSESSION",
+              style = MaterialTheme.typography.labelSmall,
+              fontWeight = FontWeight.Bold,
+              letterSpacing = 1.4.sp,
+              color = Color(0xFF8DECF4),
+            )
+            Text(
+              text = "Find your sound",
+              style = MaterialTheme.typography.headlineSmall,
+              fontWeight = FontWeight.Bold,
+              color = MaterialTheme.colorScheme.onBackground,
+            )
+          }
           Row(
             modifier =
               Modifier.fillMaxWidth()
